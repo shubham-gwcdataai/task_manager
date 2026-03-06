@@ -5,8 +5,6 @@ export default function TaskForm({ onAdd, loading }) {
   const [desc, setDesc]     = useState("");
   const [error, setError]   = useState("");
   const titleRef            = useRef(null);
-
-  // Auto-focus title input when form opens
   useEffect(() => {
     if (open) titleRef.current?.focus();
   }, [open]);
