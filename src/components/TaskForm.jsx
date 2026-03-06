@@ -1,12 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-
-/**
- * TaskForm — collapsible inline form to add a new task.
- *
- * Props:
- *   onAdd    : (title: string, description: string) => Promise<void>
- *   loading  : boolean  — disables submit while parent is saving
- */
 export default function TaskForm({ onAdd, loading }) {
   const [open, setOpen]     = useState(false);
   const [title, setTitle]   = useState("");
@@ -108,8 +100,6 @@ export default function TaskForm({ onAdd, loading }) {
               {error}
             </p>
           )}
-
-          {/* Actions row */}
           <div className="flex items-center justify-between">
             <div className="flex gap-2">
               <button
@@ -129,8 +119,6 @@ export default function TaskForm({ onAdd, loading }) {
                 Cancel
               </button>
             </div>
-
-            {/* Keyboard hint */}
             <span className="text-zinc-700 text-xs hidden sm:block">↵ to add · esc to close</span>
           </div>
         </div>

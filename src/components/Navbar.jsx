@@ -1,13 +1,4 @@
 import { useState } from "react";
-
-/**
- * Navbar — top header bar for the dashboard.
- *
- * Props:
- *   user      : Appwrite user object { name, email }
- *   onLogout  : () => void
- *   taskStats : { total: number, done: number }  — optional summary badge
- */
 export default function Navbar({ user, onLogout, taskStats }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);

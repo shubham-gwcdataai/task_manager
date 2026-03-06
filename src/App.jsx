@@ -15,15 +15,13 @@ export default function App() {
     const params = new URLSearchParams(window.location.search);
     const userId = params.get("userId");
     const secret = params.get("secret");
-
-    // ── OAuth callback: exchange token for session ──────────
     if (path === "/auth/callback" && userId && secret) {
       account.createSession(userId, secret)
         .then(() => authService.getUser())
         .then((u) => {
           setUser(u);
           setPage("dashboard");
-          window.history.replaceState({}, "", "/"); // clean URL
+          window.history.replaceState({}, "", "/"); 
         })
         .catch((err) => {
           console.error("OAuth session error:", err);

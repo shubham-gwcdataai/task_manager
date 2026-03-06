@@ -10,7 +10,6 @@ function EditIcon() {
   );
 }
 
-// Trash icon
 function TrashIcon() {
   return (
     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -20,15 +19,6 @@ function TrashIcon() {
   );
 }
 
-/**
- * TaskCard — displays a single task with toggle, inline edit, and delete.
- *
- * Props:
- *   task      : { $id, title, description, completed }
- *   onToggle  : (id, completed) => void
- *   onDelete  : (id) => void
- *   onEdit    : (id, { title, description }) => void
- */
 export default function TaskCard({ task, onToggle, onDelete, onEdit }) {
   const [editing, setEditing]   = useState(false);
   const [title, setTitle]       = useState(task.taskName);
