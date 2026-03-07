@@ -4,7 +4,7 @@ export default function TaskForm({ onAdd, loading }) {
   const [title, setTitle]   = useState("");
   const [desc, setDesc]     = useState("");
   const [error, setError]   = useState("");
-  const titleRef            = useRef(null);
+  const titleRef = useRef(null);
   useEffect(() => {
     if (open) titleRef.current?.focus();
   }, [open]);
